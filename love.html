@@ -102,6 +102,27 @@
       79%  { transform: translateY(428.57143px); }
       100% { transform: translateY(180px); }
     }
+
+    .floating-photo {
+  position: fixed;        /* floats independently of the text */
+  width: 80px;            /* adjust size */
+  height: 80px;
+  border-radius: 50%;     /* optional circular look */
+  z-index: 1000;          /* above text */
+  pointer-events: none;   /* so it doesn't block clicks */
+  animation: floatAround 15s linear infinite;
+
+  
+}
+
+@keyframes floatAround {
+  0%   { top: 5%; left: 5%; }
+  25%  { top: 10%; left: 80%; }
+  50%  { top: 70%; left: 60%; }
+  75%  { top: 50%; left: 20%; }
+  100% { top: 5%; left: 5%; }
+}
+
   </style>
 </head>
 <body>
@@ -112,6 +133,10 @@
   <a href="https://www.youtube.com/watch?v=BksBNbTIoPE" class="quick-link" title="Gift">❤️</a>
 
   <div id="ui"></div>
+
+  <!-- Floating Photo -->
+  <img src="cute.jpg" alt="Floating" class="floating-photo">
+
 
   <script>
     // Create N floating “I love you” items (was multilingual; now all English)
